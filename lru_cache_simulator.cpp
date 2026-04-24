@@ -212,7 +212,7 @@ public:
 
 int main() {
     Logger logger;
-    LRUCache cache(4, logger); // Default capacity 4
+    LRUCache cache(4, logger); // Default capacitys 4
     int choice;
 
     while (true) {
