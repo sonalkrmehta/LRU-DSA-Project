@@ -1,6 +1,6 @@
 # Pull the latest GCC image from Docker Hub
 FROM gcc:latest
-
+# Set the working directory inside the container
 WORKDIR /app
 
 COPY lru_cache_simulator.cpp .
