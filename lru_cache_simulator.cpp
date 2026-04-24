@@ -8,7 +8,7 @@
 #include <iomanip>
 #include <thread>
 
-// --- ANSI COLOR CODES FOR MODERN UI ---
+ 
 #define RESET   "\033[0m"
 #define BOLD    "\033[1m"
 #define DARK_BG "\033[48;5;234m"
@@ -82,7 +82,7 @@ public:
             return -1;
         }
 
-        // Move the accessed node to the front (MRU)
+        
         cacheList.splice(cacheList.begin(), cacheList, cacheMap[key]);
         hits++;
         logger.log("GET SUCCESS", "Key=" + std::to_string(key) + " (HIT)");
@@ -90,7 +90,7 @@ public:
     }
 
     void put(int key, int value) {
-        // If key already exists
+        
         if (cacheMap.find(key) != cacheMap.end()) {
             cacheMap[key]->value = value;
             cacheList.splice(cacheList.begin(), cacheList, cacheMap[key]);
@@ -107,7 +107,7 @@ public:
             logger.log("EVICT", "Key=" + std::to_string(lastKey) + " removed from cache.");
         }
 
-        // Insert new node at front (MRU)
+         
         cacheList.emplace_front(key, value);
         cacheMap[key] = cacheList.begin();
         logger.log("PUT", "Key=" + std::to_string(key) + " Value=" + std::to_string(value));
@@ -120,7 +120,7 @@ public:
         logger.log("RESET", "Cache cleared.");
     }
 
-    // UI helper functions
+  
     const std::list<Node>& getList() const { return cacheList; }
     int getHits() const { return hits; }
     int getMisses() const { return misses; }
