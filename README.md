@@ -37,7 +37,7 @@ If you want to view the cache_log.txt on your host machine:
 docker run -it -v $(pwd)/cache_log.txt:/app/cache_log.txt lru-simulator
 
 
-🛠️ Manual Compilation
+🛠️ Manual Compilation:
 
 Prerequisites:
 
