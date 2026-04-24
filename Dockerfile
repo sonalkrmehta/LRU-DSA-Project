@@ -1,7 +1,6 @@
-# Use a lightweight GCC image
 FROM gcc:latest
 
-# Set the working directory in the container
+
 WORKDIR /app
 
 # Copy the source code and README into the container
