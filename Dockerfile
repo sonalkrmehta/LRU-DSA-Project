@@ -1,3 +1,4 @@
+# Pull the latest GCC image from Docker Hub
 FROM gcc:latest
 
 WORKDIR /app
